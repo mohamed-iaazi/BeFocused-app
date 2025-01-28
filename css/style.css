@@ -13,6 +13,9 @@ li a ,p {
     font-size:small;
 
 }
+ul{
+    list-style: none;
+}
 p{
     font-size: 6px;
 }
@@ -30,6 +33,7 @@ nav {
     height: 100px;
     width: 100px;
     display: block;
+
 }
 nav button {
     border: none;
@@ -51,3 +55,46 @@ height: 50px;
     padding: 30px;
     border-radius: 5px;
 }
+nav div{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.card{
+    width: fit-content;
+
+}
+
+.add-card{
+    padding: 10px;
+    border: dashed #d1d1d2 3px;
+    width: fit-content;
+    background-color: #fff;
+    color: rgb(189, 190, 190);
+    height: fit-content;
+}
+
+.add-card img{
+    height: 80px;
+    width: 60px;
+}
+ .card h2 ,.card h3{
+    font-size: 14px;
+
+}
+.add-card h2{
+    font-size: 14px;
+
+}
+
+.notes img{
+    height: 10px;
+    width: 10px;
+    
+}
+ .Priorité h3{
+ font-size: 16px;
+ }
+
