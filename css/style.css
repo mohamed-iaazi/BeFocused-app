@@ -17,7 +17,7 @@ ul{
     list-style: none;
 }
 p{
-    font-size: 6px;
+    font-size: 10px;
 }
 .active {
     color: black;
@@ -41,7 +41,7 @@ nav button {
     color: white;
     background-color: #253D78;
     padding:  4px 10px;
-    font-size: 8px;
+    font-size: 12px;
 
 }
 
@@ -51,8 +51,8 @@ height: 50px;
 }
 
 .Priorité{
-    background-color: #d1e5ee;
-    padding: 30px;
+   
+    padding: 20px;
     border-radius: 5px;
 }
 nav div{
@@ -77,10 +77,10 @@ nav div{
 }
 
 .add-card img{
-    height: 80px;
-    width: 60px;
+    height: 50px;
+    width: 40px;
 }
- .card h2 ,.card h3{
+ .card h2 ,left h3{
     font-size: 14px;
 
 }
@@ -94,7 +94,19 @@ nav div{
     width: 10px;
     
 }
+
+.notes-m img{
+    height: 50px;
+    width: 40px;
+
+}
  .Priorité h3{
  font-size: 16px;
  }
-
+left h1{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.back {
+      background-color: #d1e5ee;
+}
