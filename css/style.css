@@ -90,8 +90,11 @@ nav div{
 }
 
 .notes img{
-    height: 10px;
-    width: 10px;
+    height: 15px;
+    width: 2px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     
 }
 
@@ -110,3 +113,19 @@ left h1{
 .back {
       background-color: #d1e5ee;
 }
+
+.line {
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: #d1d1d2;
+}
+
+label {
+    font-size: 18px;
+}
+.notes input {
+    height: 18px;
+    width: 18px;
+}
+
