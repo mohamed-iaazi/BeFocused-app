@@ -13,7 +13,7 @@
     
     <main class="row  container-fluid p-0 m-0" >
 
-    <!-- slide meni itemes  -->
+    <!-- slide menu itemes  -->
     <header class="col-sm-12 col-md-3 col-lg-2">
         <nav >
             <a class="logo navbar-brand " href="#">Be Focus</a>
@@ -38,15 +38,15 @@
 
 
     <!-- start main section next to slide menu  -->
-    <div class="col-sm-4 col-md-9  col-lg-10">
+    <div class="col-sm-12 col-md-9  col-lg-10">
 
         <!-- main container for notes  -->
         <left>
              <!-- first section  -->
 
-            <section class="d-flex justify-content-between align-items-center pt-3 appbar">
-                <h1>Reccent</h1>
-                <div>
+            <section class="row flex-row-reverse justify-content-center align-items-center pt-3 appbar">
+             
+                <div class="col-sm-12 col-md-6 ">
                     <!-- <input type="text" placeholder="search"> -->
     
             
@@ -57,10 +57,7 @@
                             
                               
                 </div>
-                <div class="d-flex align-items-center">
-                    <h3>Mohamed Iaazi</h3>
-                    <img src="./assets/img.png" alt="my profile">
-                </div>
+                <h1 class="col-sm-12 col-md-4 mt-6">Reccent</h1>
              
             </section>
 
@@ -74,9 +71,9 @@
                 <li class="pt-2  nav-item "><a class="nav-link"  href="#"> moyenne </a></li>
                 <li class="pt-2  nav-item "><a class="nav-link"  href="#"> haute </a></li>
             </ul>
-          <div class="d-flex gap-2 align-content-center align-items-center ">
+          <div class="row gap-2 align-content-center align-items-center ">
              <!-- notes cards  -->
-            <div class="card p-4 ">
+            <div class="card p-4 col-sm-12 col-md-2 col-lg-2 ">
                 <div class="notes-m" >
                     <img src="./assets/note-display@2x.png" alt="note"> 
                  </div>
@@ -84,7 +81,7 @@
                 <h3 class="font-weight-light text-secondary">Description of notes </h3>
             </div>
              <!-- add new card  -->
-            <div class="add-card">
+            <div id="add-note" class="add-card col-sm-12 col-md-2 col-lg-1">
                 <img src="./assets/notes-add@2x.png" alt="note">
                 <h2>New Note </h2>
             </div>
@@ -93,9 +90,6 @@
 
         
             </section>
-
-
-
 
 
              <!-- ssecond section  -->
@@ -109,9 +103,9 @@
                 <li class="nav-item"><a class="nav-link" href="#"> Doing </a></li>
                 <li class="nav-item"><a class="nav-link" href="#"> Done </a></li>
             </ul>
-   <div class="d-flex gap-2 align-content-center align-items-center">
+   <div class="row gap-2 align-content-center align-items-center">
              <!-- notes cards  -->
-            <div class="card p-4 notes">
+            <div class="card p-4 notes col-sm-10 col-md-2 col-lg-3">
                 <img  src="./assets/more@2x.png" alt="" srcset="">
                 <h2>Title </h2>
                 <h3 class="font-weight-light text-secondary">Description of notes </h3>
@@ -126,7 +120,7 @@
                       <button type="button" class="btn btn-outline-dark">Start The task</button>
             </div>
              <!-- add new card  -->
-            <div class="add-card">
+            <div id="add-note" class="add-card col-sm-12 col-md-2 col-lg-1">
                 <img src="./assets/notes-add@2x.png" alt="note">
                 <h2>New Note </h2>
             </div>
@@ -152,6 +146,28 @@
     </main>
 
 
+    <div id="add-popup" class="d-none add-popup position-absolute top-0 bottom-0 end-0 start-0 card p-3 ms-auto me-auto mt-5 mb-5">
+        <label for="title">Title</label>
+        <input id="title" type="text" name="title" placeholder="title">
+        <label class="mt-4" for="desc">Description</label>
+        <textarea  name="desc" id="Description" placeholder="Your Description"></textarea>
+        <select class="mt-4" name="Priorité" id="Priorité" aria-placeholder="Priorité" >
+            <option value="select" selected disabled>Select One option</option>
+            <option value="Low">Low</option>
+            <option value="hight">hight</option>
+            <option value="Meduim">Meduim</option>
+        </select>
+       <div class="d-flex justify-content-between mt-4">
+        <button id="cancel" class="btn btn-danger">cancel</button>
+        <button id="save" class="btn btn-success">Save</button>
+       </div>
+       
+
+
+    </div>
+
+
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

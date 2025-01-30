@@ -129,3 +129,16 @@ label {
     width: 18px;
 }
 
+.card{
+    height: fit-content !important;
+}
+.add-popup{
+    z-index: 999;
+
+}
+
+@media screen and (min-width:800px) {
+    .add-popup{
+        font-size: 20px;
+    }
+}
