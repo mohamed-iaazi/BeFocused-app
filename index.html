@@ -19,7 +19,7 @@
             <a class="logo navbar-brand " href="#">Be Focus</a>
             <div class=" p-1  d-flex flex-column justify-content-between">
                 <ul class="ps-0 pt-3 navbar-nav text-center">
-                    <li class="pt-2  nav-item "><a class="active  nav-link " href="#"> <img src="./assets/add@2x.png" alt=""> add new </a></li>
+                    <li class="pt-2  nav-item "><a id="add-note" class="active  nav-link add-note " href="#"> <img src="./assets/add@2x.png" alt=""> add new </a></li>
                     <li class="pt-2  nav-item "><a class="nav-link" href="#"><img src="./assets/calander@2x.png" alt=""> Calendre </a></li>
                     <li class="pt-2  nav-item "><a class="nav-link" href="#"><img src="./assets/archive@2x.png" alt=""> Archive </a></li>
                     <li class="pt-2  nav-item "><a   class="  nav-link" href="#"><img src="./assets/trash@2x.png" alt=""> Trash </a></li>
@@ -64,36 +64,6 @@
 
             <div class="back">
 
-            <section class="Priorité">
-            <h3>Priorité</h3>
-            <ul class=" d-flex  gap-5">
-                <li class="pt-2  nav-item "><a class="nav-link"  href="#"> basse </a></li>
-                <li class="pt-2  nav-item "><a class="nav-link"  href="#"> moyenne </a></li>
-                <li class="pt-2  nav-item "><a class="nav-link"  href="#"> haute </a></li>
-            </ul>
-          <div class="row gap-2 align-content-center align-items-center ">
-             <!-- notes cards  -->
-            <div class="card p-4 col-sm-12 col-md-2 col-lg-2 ">
-                <div class="notes-m" >
-                    <img src="./assets/note-display@2x.png" alt="note"> 
-                 </div>
-                <h2 class="mt-1">Title </h2>
-                <h3 class="font-weight-light text-secondary">Description of notes </h3>
-            </div>
-             <!-- add new card  -->
-            <div id="add-note" class="add-card col-sm-12 col-md-2 col-lg-1">
-                <img src="./assets/notes-add@2x.png" alt="note">
-                <h2>New Note </h2>
-            </div>
-        </div>
-
-
-        
-            </section>
-
-
-             <!-- ssecond section  -->
-
              <section class="Priorité">
               
             <section >
@@ -103,31 +73,9 @@
                 <li class="nav-item"><a class="nav-link" href="#"> Doing </a></li>
                 <li class="nav-item"><a class="nav-link" href="#"> Done </a></li>
             </ul>
-   <div class="row gap-2 align-content-center align-items-center">
-             <!-- notes cards  -->
-            <div class="card p-4 notes col-sm-10 col-md-2 col-lg-3">
-                <img  src="./assets/more@2x.png" alt="" srcset="">
-                <h2>Title </h2>
-                <h3 class="font-weight-light text-secondary">Description of notes </h3>
-                 <span class="line"></span>
-                 <h3 class=" p-2 pt-5 font-weight-light text-secondary text-center ">Lorem ipsum dolor sit, <br>
-                    amet consectetur adipisicing elit.. </h3>
-               
-                    <div>
-                        <input class="mt-4" type="checkbox" name="done" id="done">                
-                        <label for="done">Done</label>
-                      </div>
-                      <button type="button" class="btn btn-outline-dark">Start The task</button>
-            </div>
-             <!-- add new card  -->
-            <div id="add-note" class="add-card col-sm-12 col-md-2 col-lg-1">
-                <img src="./assets/notes-add@2x.png" alt="note">
-                <h2>New Note </h2>
-            </div>
-        </div>
+   <div id="notes" class=" row gap-2 align-content-center align-items-center">
+           
 
-
-        
             </section>
 
         </div>
