@@ -2,11 +2,9 @@
 const popup = document.getElementById("add-popup");
 const main = document.querySelector('main');
 const addnote = document.getElementById("add-note");
-const saveButton = document.getElementById("save");
-const cancelButton = document.getElementById("cancel");
 
 // Initialize notes list from localStorage
-let notelist = JSON.parse(localStorage.getItem("notes")) || [];
+const notelist = JSON.parse(localStorage.getItem("notes")) || [];
 display();
 
 // Set onclick listener for add button
@@ -22,22 +20,20 @@ function add() {
     document.getElementById("Description").value = '';
     document.getElementById("Priorité").value = '';
 
-    // Ensure only one event listener is attached to cancel button
-    cancelButton.onclick = () => {
+    document.getElementById("cancel").addEventListener('click', () => {
         popup.classList.add("d-none");
         main.style.filter = 'none';
-    };
+    });
 
-    // Ensure only one event listener is attached to save button
-    saveButton.onclick = () => {
-        const title = document.getElementById("title").value.trim();
-        const description = document.getElementById("Description").value.trim();
-        const priority = document.getElementById("Priorité").value.trim();
+    document.getElementById("save").addEventListener('click', () => {
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("Description").value;
+        const priority = document.getElementById("Priorité").value;
 
         // Prevent saving if any field is empty
-        if (title === '' || description === '' || priority === '') {
+        if (title.trim() === '' || description.trim() === '' || priority.trim() === '') {
             alert("Please fill in all fields.");
-            return;  // Stop execution to prevent saving
+            return;
         }
 
         // Save the note
@@ -52,10 +48,10 @@ function add() {
         // Close popup and reset fields
         popup.classList.add("d-none");
         main.style.filter = 'none';
-
+        
         // Re-display the notes
         display();
-    };
+    });
 }
 
 function display() {
@@ -79,10 +75,66 @@ function display() {
                     <label for="done">Done</label>
                 </div>
                 <p class="note-priority">${note.priority}</p>
-                <button type="button" class="btn btn-outline-dark">Start The task</button>
+                <button id="starttimer" type="button" class="btn btn-outline-dark">Start The task</button>
             </div>
         `;
 
         noteContainer.insertAdjacentHTML('afterbegin', noteElement);
     });
+}
+
+document.getElementById("starttimer").addEventListener('click', () => {
+    const timer = document.getElementById('timer');
+    timer.classList.remove("d-none");
+    startTimer();
+});
+
+// Pomodoro Timer Logic
+let timer;
+let minutes = 25;
+let seconds = 0;
+let isPaused = false;
+let enteredTime = null;
+
+function startTimer() {
+    timer = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    const timerElement = document.getElementById('timer');
+    timerElement.innerHTML = formatTime(minutes, seconds);
+
+    if (minutes === 0 && seconds === 0) {
+        clearInterval(timer);
+        alert('Time is up! Take a break.');
+    } else if (!isPaused) {
+        if (seconds > 0) {
+            seconds--;
+        } else {
+            seconds = 59;
+            minutes--;
+        }
+    }
+}
+
+function formatTime(minutes, seconds) {
+    return `   <div class="timer-circle" 
+             id="timer">${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</div>
+        <div class="control-buttons">
+            <button onclick="togglePauseResume()">
+                  Pause
+              </button>
+        
+        </div>`;
+}
+function togglePauseResume() {
+    isPaused = !isPaused;
+    const pauseResumeButton = document.querySelector('.control-buttons button');
+    if (isPaused) {
+        clearInterval(timer);
+        pauseResumeButton.textContent = 'Resume';
+    } else {
+        startTimer();
+        pauseResumeButton.textContent = 'Pause';
+    }
 }
